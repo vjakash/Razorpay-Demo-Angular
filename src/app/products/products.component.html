@@ -1,0 +1,15 @@
+<div style="text-align: center;background-color: black;color: white;padding: 0.5rem;margin-bottom: 1rem;">
+    <h1>Shopping Shop</h1>
+</div>
+<div class="container">
+    <div *ngFor="let item of productData;index as i">
+        <h1>{{item.product_name}}|{{item.product}}</h1>
+        <p>{{item.department}}</p>
+        <p>color:{{item.color}}</p>
+        <p>Material:{{item.product_material}}</p>
+        <h3>{{item.product_price|currency:'INR'}}</h3>
+        <input type="submit" (click)="initPay(item.product_price,item.id)" value="Pay with RazorPay">
+        <br>
+        <br>
+    </div>
+</div>
