@@ -9,7 +9,7 @@ import {WindowRefService} from '../services/window-ref.service';
 export class PaySuccessComponent implements OnInit {
 
   constructor(private winRef: WindowRefService) { 
-    // this.winRef.getOrder("order_EzPOcsMLDnuBa9").subscribe((data)=>{
+    // this.winRef.getOrder("Order_id").subscribe((data)=>{
     //   console.log(data);
     // })
   }
