@@ -49,18 +49,19 @@ export class ProductsComponent implements OnInit {
   }
 
   initPay(price,id): void {
-    this.winRef.getOrderId(parseFloat(price)*100,id).subscribe((data)=>{
-      console.log(data);
-    },(err)=>console.log(err))
-    //   this.options.amount=parseFloat(price)*100;
-    // this.rzp = new this.winRef.nativeWindow['Razorpay'](this.options);
-    // this.rzp.open();
+    // this.winRef.getOrderId(parseFloat(price)*100,id).subscribe((data)=>{
+    //   console.log(data);
+    // },(err)=>console.log(err))
+      this.options.amount=parseFloat(price)*100;
+    this.rzp = new this.winRef.nativeWindow['Razorpay'](this.options);
+    this.rzp.open();
     
   }
   paymentHandler(res: any) {
     this.zone.run(() => {
       // add API call here
       console.log(res);
+      this.router.navigate(["/payment-successfull"])
       // let generated_signature = CryptoJS.HmacSHA256(res.razorpay_order_id + "|" + res.razorpay_payment_id,"V3iI59d2EyyBpKAxThdGHLTT");
       // if (generated_signature == res.razorpay_signature) {
       //   console.log("payment is successful");

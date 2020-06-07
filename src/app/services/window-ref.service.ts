@@ -30,11 +30,11 @@ export class WindowRefService {
     console.log(cred);
     return this.http.post('https://api.razorpay.com/v1/orders', data, {
       headers: new HttpHeaders({
-        "Access-Control-Allow-Origin":"*",
         "Authorization": `Basic cnpwX3Rlc3RfVk9PQ0M1c1M5Tm1UU0Y6VjNpSTU5ZDJFeXlCcEtBeFRoZEdITFRU`
       })
     });
   }
+
   getOrder(orderId): Observable<any> {
     let cred = window.btoa('rzp_test_VOOCC5sS9NmTSF:V3iI59d2EyyBpKAxThdGHLTT');
     return this.http.get(`https://api.razorpay.com/v1/orders/${orderId}/payments`, {
