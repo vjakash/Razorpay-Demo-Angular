@@ -26,17 +26,17 @@ export class WindowRefService {
       receipt: `rcptid_${id}`,
       payment_capture: 1,
     };
-    let cred = window.btoa('rzp_test_VOOCC5sS9NmTSF:V3iI59d2EyyBpKAxThdGHLTT');
+    let cred = window.btoa('key_id:key_secret');
     console.log(cred);
     return this.http.post('https://api.razorpay.com/v1/orders', data, {
       headers: new HttpHeaders({
-        "Authorization": `Basic cnpwX3Rlc3RfVk9PQ0M1c1M5Tm1UU0Y6VjNpSTU5ZDJFeXlCcEtBeFRoZEdITFRU`
+        "Authorization": `Basic ${cred}`
       })
     });
   }
 
   getOrder(orderId): Observable<any> {
-    let cred = window.btoa('rzp_test_VOOCC5sS9NmTSF:V3iI59d2EyyBpKAxThdGHLTT');
+    let cred = window.btoa('key_id:key_secret');
     return this.http.get(`https://api.razorpay.com/v1/orders/${orderId}/payments`, {
       headers: new HttpHeaders({
         Authorization: `Basic ${cred}`,

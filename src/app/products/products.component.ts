@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   public rzp: any;
 
   public options: any = {
-    key: 'rzp_test_VOOCC5sS9NmTSF', // add razorpay key here
+    key: 'Key', // add razorpay key here
     name: 'RazorPay Demo',
     description: 'Shopping',
     amount: 100, // razorpay takes amount in paisa
